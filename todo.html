@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>My todo app</title>
+    </head>
+    <body>
+        <input id="todo-title" type="text" />
+        <button onclick="addTodo()">Add Todo</button>
+        
+        <script>
+            let todos = [];
+
+            todos.forEach(function (todoTitle){
+                let element = document.createElement('div');
+                element.innerText = todoTitle;
+                document.body.appendChild(element);
+            })
+
+            function addTodo() {
+                let textbox = document.getElementById('todo-title');
+                let title = textbox.value;
+                todos.push(title);
+            }
+
+            function addListItem(item) {
+                const newDiv = document.createElement('div');
+                newDiv.innerText = item;
+
+                const theCart = document.getElementById('cart');
+                theCart.appendChild(newDiv);
+            }
+
+            function clearList () {
+                const workingDiv = document.getElementById('cart');
+                workingDiv.innerHTML = '';
+            }
+
+           
+
+            
+
+
+        </script>  
+
+        <button onclick = "addListItem('Apple')">Apple</button>
+        <button onclick = "addListItem('Tomato')">Tomato</button>
+        <button onclick = "addListItem('Eggs')">Eggs</button>
+        <button onclick = "clearList()">Clear</button>
+
+        <div id="cart"></div>
+        
+
+    </body>
+</html>
+

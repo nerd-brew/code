@@ -1,0 +1,3 @@
+(library
+ (name advent1)
+ (libraries core base))
